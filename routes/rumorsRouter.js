@@ -12,7 +12,7 @@ import {
 import { validateRumor, validateRumorIdParam } from '../middleware/validationMiddleware.js'
 import { authorizePermissions } from '../middleware/authMiddleware.js'
 
-router.route('/').get(authorizePermissions('admin'), getAllRumors).post(validateRumor, createNewRumor)
+router.route('/').get(authorizePermissions('admin', 'user'), getAllRumors).post(validateRumor, createNewRumor)
 router
   .route('/:rumorId')
   .get(validateRumorIdParam, getSingleRumor)

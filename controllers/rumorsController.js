@@ -3,7 +3,7 @@ import Rumor from '../models/RumorModel.js'
 
 export const getAllRumors = async (req, res) => {
   const { lockerId } = req.locker
-  const rumors = await Rumor.find({ userId: lockerId })
+  const rumors = await Rumor.find({})
   res.status(StatusCodes.OK).json(rumors)
 }
 
